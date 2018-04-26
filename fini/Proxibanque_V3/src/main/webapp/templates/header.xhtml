@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<ui:composition>
+	<div class="header">
+		<h:outputText value="ProxiBanque"></h:outputText>
+	</div>
+	<h:form>
+	<b:navBar class="navBar" style="margin-bottom:0px;" fluid="true"
+		inverse="true">
+		<b:navbarLinks>
+			<b:navCommandLink class="bouttonNavBar" style="color:white;"
+				value="Liste clients" action="#{conseillerBean.authentification}" ></b:navCommandLink>
+		</b:navbarLinks>
+		<!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
+		<b:navbarLinks pull="right">
+			<b:navCommandLink class="bouttonNavBar" style="color:white;" value="Logout"
+				action="#{conseillerBean.logout}" type="button"></b:navCommandLink>
+		</b:navbarLinks>
+	</b:navBar>
+	</h:form>
+</ui:composition>
+</html>

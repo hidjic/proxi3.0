@@ -102,7 +102,7 @@ CREATE TABLE `conseiller` (
 
 LOCK TABLES `conseiller` WRITE;
 /*!40000 ALTER TABLE `conseiller` DISABLE KEYS */;
-INSERT INTO `conseiller` VALUES (1,'LeVrai','Conseiller','test','123');
+INSERT INTO `conseiller` VALUES (1,'Dupond','Pierre','test','123');
 /*!40000 ALTER TABLE `conseiller` ENABLE KEYS */;
 UNLOCK TABLES;
 

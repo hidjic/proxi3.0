@@ -1,0 +1,151 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<f:view>
+		<ui:composition template="templates/common.xhtml">
+			<ui:define name="content">
+				<div class="container">
+					<div>
+						<p:panelGrid class="placementListeCLient">
+							<f:facet name="header">
+								<p:row>
+									<p:column colspan="7">Information Client</p:column>
+								</p:row>
+							</f:facet>
+							<p:row>
+								<p:row>
+									<p:column style=" text-align: left;">
+										<div style="font-weight: normal;">
+											<h:outputLabel style="font-weight: bold;"
+												rendered="#{userBean.userSession.unCC.isActive == 1}">Compte Courant : Ouvert</h:outputLabel>
+											<Br />
+											<h:outputLabel style="font-weight: bold;"
+												rendered="#{userBean.userSession.unCC.isActive == 0}">Compte Courant : Fermé</h:outputLabel>
+											<Br />
+											<h:outputLabel
+												rendered="#{userBean.userSession.unCC.isActive == 1}"> Numéro compte : #{userBean.userSession.unCC.numCompte}   </h:outputLabel>
+											<Br />
+											<h:outputLabel
+												rendered="#{userBean.userSession.unCC.isActive == 1}"> Solde : #{userBean.userSession.unCC.solde}   </h:outputLabel>
+											<Br />
+											<h:outputLabel
+												rendered="#{userBean.userSession.unCC.isActive == 1}"> découvert autorisé : #{userBean.userSession.unCC.decouvert}   </h:outputLabel>
+											<Br /> <Br />
+										</div>
+									</p:column>
+									<p:column rowspan="4">
+										<div class="infoClient">
+											<p style="font-weight: bold;">Informations client</p>
+											<p:spacer />
+											<p>Nom : #{userBean.userSession.nom}</p>
+											<p>Prenom : #{userBean.userSession.prenom}</p>
+											<p:spacer />
+											<p>Adresse : #{userBean.userSession.adresse}</p>
+											<p>Ville : #{userBean.userSession.ville}</p>
+											<p>Code postale : #{userBean.userSession.codePostal}</p>
+											<p:spacer />
+											<p>email : #{userBean.userSession.email}</p>
+											<p:spacer />
+											<h:graphicImage value="/resources/img/portrait.jpg" />
+											<p:spacer /><Br/><Br/><Br/>
+											<h:form>
+												<h:commandButton class="bouttonUpdate2"
+													value="Modifier infos client" action="#" />
+											</h:form>
+										</div>
+									</p:column>
+								</p:row>
+								<p:row>
+									<p:column styleClass="ui-widget-header">
+										<h:form rendered="#{userBean.userSession.unCC.isActive == 1}">
+											<h:commandButton class="bouttonCredit"
+												value="Créditer compte courant"
+												action="#{userBean.showCreditPage('C')}" />
+											<h:commandButton class="bouttonDebit"
+												value="Débiter compte courant"
+												action="#{userBean.showDebitPage('C')}" />
+										</h:form>
+										<h:form rendered="#{userBean.userSession.unCC.isActive == 0}">
+											<h:commandButton class="bouttonActiver"
+												value="Ouvrir compte courant"
+												action="#{userBean.activerCompteCourant}" />
+										</h:form>
+									</p:column>
+								</p:row>
+								<p:row>
+									<p:column style="text-align: left;">
+										<h:outputLabel
+											rendered="#{userBean.userSession.unCE.isActive == 1}">Compte Epargne : Ouvert</h:outputLabel>
+										<Br />
+										<h:outputLabel style="font-weight: bold;"
+											rendered="#{userBean.userSession.unCE.isActive == 0}">Compte Epargne : Fermé</h:outputLabel>
+										<Br />
+										<h:outputLabel
+											rendered="#{userBean.userSession.unCE.isActive == 1}"> Numéro compte : #{userBean.userSession.unCE.numCompte}   </h:outputLabel>
+										<Br />
+										<h:outputLabel
+											rendered="#{userBean.userSession.unCE.isActive == 1}"> Solde : #{userBean.userSession.unCE.solde}   </h:outputLabel>
+										<Br />
+										<h:outputLabel
+											rendered="#{userBean.userSession.unCE.isActive == 1}"> découvert autorisé : #{userBean.userSession.unCE.taux}   </h:outputLabel>
+										<Br />
+										<Br />
+									</p:column>
+								</p:row>
+								<p:row>
+									<p:column styleClass="ui-widget-header">
+										<h:form rendered="#{userBean.userSession.unCE.isActive == 1}">
+											<h:commandButton class="bouttonCredit"
+												value="Créditer compte epargne"
+												action="#{userBean.showCreditPage('E')}" />
+											<h:commandButton class="bouttonDebit"
+												value="Débiter compte Epargne"
+												action="#{userBean.showDebitPage('E')}" />
+										</h:form>
+										<h:form rendered="#{userBean.userSession.unCE.isActive == 0}">
+											<h:commandButton class="bouttonActiver"
+												value="Ouvrir compte epargne"
+												action="#{userBean.activerCompteEpargne}" />
+										</h:form>
+									</p:column>
+								</p:row>
+							</p:row>
+
+							<f:facet name="footer">
+								<p:row>
+									<p:column colspan="7" style="text-align: center">
+									</p:column>
+								</p:row>
+							</f:facet>
+
+							<f:facet name="footer">
+								<p:row>
+									<p:column colspan="7">
+										<h:commandButton class="bouttonCreate2"
+											value="Réaliser un virement compte à compte" action="#" />
+									</p:column>
+								</p:row>
+							</f:facet>
+
+						</p:panelGrid>
+
+						<h:form>
+
+						</h:form>
+					</div>
+
+				</div>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+</h:body>
+</html>
+

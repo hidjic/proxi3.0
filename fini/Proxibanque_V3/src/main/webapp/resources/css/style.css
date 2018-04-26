@@ -1,0 +1,210 @@
+html, body {
+	background-image: url(/Proxibanque_V3/resources/img/bg.jpg);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.header {
+	background-color: rgba(105, 105, 105);
+	text-align: center;
+	position: relative;
+	left: 20%;
+	max-width: 60%;
+	min-height: 8%;
+	color: white;
+	font-size: xx-large;
+}
+
+.footer {
+	background-color: rgba(105, 105, 105);
+	text-align: center;
+	position: relative;
+	left: 20%;
+	max-width: 60%;
+	padding-top: 5px;
+	padding-right: 10px;
+	height: 5%;
+	text-align: right;
+	color: white;
+	font-size: xx-small;
+}
+
+.container {
+	background-color: rgba(255, 255, 255, 0.9);
+	text-align: center;
+	min-width: 60%;
+	max-width: 60%;
+	margin-right: 20%;
+	margin-left: 20%;
+	min-height: 84vh;
+}
+
+/* NavBar */
+.navBar {
+	max-width: 70%;
+	margin-right: 20%;
+	margin-left: 20%;
+	margin-bottom: 0%;
+	position: relative;
+	top: 20%;
+	height: 5%;
+}
+
+.bouttonNavBar {
+	color: white;
+	font-size: large;
+}
+
+/* login page */
+.divLogin {
+	text-align: center;
+	max-width: 70%;
+	margin-right: 20%;
+	margin-left: 20%;
+	height: 100vh;
+}
+
+.placementFormulaire {
+	max-width: 23%;
+	min-height: 30%;
+	border: 2px solid black;
+	border-radius: 20px;
+	padding: 6%;
+	position: relative;
+	left: 30%;
+	top: 10vh;
+	display: block;
+}
+
+/* ListeClients page */
+.bouttoncreate {
+	margin-top: 20px;
+	float: middle;
+	background-color: rgba(105, 105, 105);
+	color: white;
+	font-size: large;
+}
+
+.placementListeCLient {
+	max-width: 150%;
+	min-width: 90%;
+	position: relative;
+	left: 3%;
+	top: 5vh;
+	font-size: medium;
+}
+
+.bouttonget {
+	float: middle;
+	background-color: #0080ff;
+	color: white;
+}
+
+.bouttonupdate {
+	float: middle;
+	background-color: green;
+	color: white;
+}
+
+.bouttondelete {
+	float: middle;
+	background-color: red;
+	color: white;
+}
+
+.rowSeparate {
+	background-color: rgba(200, 200, 200);
+}
+
+/* creation client page */
+.bouttonEnregistrer {
+	float: middle;
+	background-color: deepskyblue;
+	color: black;
+}
+
+/* infosClient page */
+.infoClient {
+	text-align: left;
+	padding-top: 6%;
+	padding-bottom: 6%;
+}
+
+.compteCourant {
+	text-align: left;
+	max-width: 20%;
+	min-height: 80%;
+	border: 2px solid black;
+	border-radius: 20px;
+	padding-bottom: 6%;
+	position: relative;
+	left: 60%;
+	top: 5vh;
+	display: block;
+}
+
+.compteEpargne {
+	text-align: left;
+	max-width: 20%;
+	min-height: 80%;
+	border: 2px solid black;
+	border-radius: 20px;
+	padding-bottom: 6%;
+	position: relative;
+	left: 60%;
+	top: 30vh;
+	display: block;
+}
+
+.bouttonCredit {
+	float: left;
+	background-color: rgba(189, 245, 200);
+	color: black;
+}
+
+.bouttonDebit {
+	float: right;
+	background-color: rgba(255, 175, 70);
+	color: black;
+}
+
+.bouttonActiver {
+	float: middle;
+	background-color: rgba(161, 218, 245);
+	color: black;
+}
+
+.bouttonUpdate2 {
+	float: right;
+	background-color: green;
+	color: white;
+}
+.bouttonCreate2 {
+	text-align:center;
+	background-color: deepskyblue;
+	color: black;
+}
+
+
+/* debitCompte page */
+.formulaireDebit {
+	max-width: 45%;
+	min-height: 30%;
+	border: 2px solid black;
+	border-radius: 20px;
+	padding: 6%;
+	position: relative;
+	left: 30%;
+	top: 10vh;
+}
+
+.bouttonValider {
+	margin-top: 20px;
+	float: middle;
+	background-color: rgba(105, 105, 105);
+	color: white;
+	font-size: large;
+}

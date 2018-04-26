@@ -1,0 +1,88 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:body>
+	<f:view>
+		<ui:composition template="templates/common.xhtml">
+			<ui:define name="content">
+				<div class="container">
+
+
+
+
+
+					<h3>Veuillez entrer les informations du nouveau client</h3>
+					<h:form>
+						<p:panelGrid class="placementListeCLient">
+							<f:facet name="header">
+								<p:row>
+									<p:column colspan="4">Identité du client</p:column>
+								</p:row>
+							</f:facet>
+
+							<p:row>
+								<p:column> nom : </p:column>
+								<p:column>
+									<p:inputText value="#{userBean.userSession.nom}" id="nom" required="true"/>
+								</p:column>
+
+								<p:column> Prenom : </p:column>
+								<p:column>
+									<p:inputText value="#{userBean.userSession.prenom}" id="prenom" required="true"/>
+								</p:column>
+							</p:row>
+
+							<p:row>
+								<p:column colspan="4" styleClass="ui-widget-header">
+									Coordonnées du client
+								</p:column>
+							</p:row>
+
+							<p:row>
+								<p:column> Adresse : </p:column>
+								<p:column>
+									<p:inputText value="#{userBean.userSession.adresse}" id="adresse" required="true"/>
+								</p:column>
+
+								<p:column value="#{userBean.userSession.codePostal}" id="codePostal" required="true"> code Postal : </p:column>
+								<p:column>
+									<p:inputText />
+								</p:column>
+							</p:row>
+
+							<p:row>
+								<p:column >Ville : </p:column>
+								<p:column>
+									<p:inputText value="#{userBean.userSession.ville}" id="ville" required="true"/>
+								</p:column>
+								
+								<p:column>email : </p:column>
+								<p:column>
+									<p:inputText value="#{userBean.userSession.email}" id="email" required="true" />
+								</p:column>
+							</p:row>
+
+							<f:facet name="footer">
+								<p:row>
+									<p:column colspan="4" style="text-align: center">
+										<h:form><h:commandButton value="Enregistrer nouveau client" icon="ui-icon-check"
+											class="bouttonEnregistrer" action="#{userBean.creationUser(conseillerBean.conseillerSession.idConseiller)}" /></h:form>
+									</p:column>
+								</p:row>
+							</f:facet>
+						</p:panelGrid>
+					</h:form>
+				</div>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+</h:body>
+</html>

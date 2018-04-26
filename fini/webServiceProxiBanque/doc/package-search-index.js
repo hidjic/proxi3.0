@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"fr.gtm.dao"},{"l":"fr.gtm.domaine"},{"l":"fr.gtm.webServiceProxiBanque"}]

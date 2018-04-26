@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<f:view>
+	<head>
+<title>Un formulaire d'inscription JSF</title>
+	</head>
+	<body>
+		<h:form>
+			<h4>
+				Formulaire JSF d'inscription au <a
+					href="http://www.objis.com/formation-java/club-objis.html">Club
+					Objis</a>.
+			</h4>
+			<table>	
+				<tr>
+					<td>Prénom:</td>
+					<td><h:inputText value="#{userbean.prenom}" required="true"
+							id="prenom" /> <h:message for="prenom" /></td>
+				</tr>
+				<tr>
+					<td>Nom:</td>
+					<td><h:inputText value="#{userbean.nom}" required="true"
+							id="nom" /> <h:message for="nom" /></td>
+				</tr>
+				<tr>
+					<td>Sexe:</td>
+					<td><h:selectOneRadio value="#{userbean.genre}"
+							required="true" id="genre">
+							<f:selectItem itemLabel="Homme" itemValue="homme" />
+							<f:selectItem itemLabel="Femme" itemValue="femme" />
+						</h:selectOneRadio> <h:message for="genre" /></td>
+				</tr>
+				<tr>
+					<td>Date de naissance:</td>
+					<td><h:inputText value="#{userbean.datedenaissance}"
+							id="datenaissance" required="true">
+						</h:inputText> (mm-dd-yy) <h:message for="datenaissance" /></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><h:inputText value="#{userbean.email}" required="true"
+							id="email" /> <h:message for="email" /></td>
+				</tr>
+				<tr>
+					<td>Qualité de service:</td>
+					<td><h:selectOneMenu value="#{userbean.niveaudeservice}">
+							<f:selectItem itemLabel="Basic" itemValue="basic" />
+							<f:selectItem itemLabel="Medium" itemValue="medium" />
+							<f:selectItem itemLabel="Premium" itemValue="premium" />
+						</h:selectOneMenu></td>
+				</tr>
+			</table>
+			<p>
+				<h:commandButton value="Inscription" action="#" />
+			</p>
+		</h:form>
+	</body>
+</f:view>
+</html>

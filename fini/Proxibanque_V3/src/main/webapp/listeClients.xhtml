@@ -1,0 +1,102 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<f:view>
+		<ui:composition template="templates/common.xhtml">
+			<ui:define name="content">
+				<div class="container">
+					
+						<div class="ui-g">
+							<div class="ui-g-9">
+								<h2 style="font-family: Verdana; font-style: italic;">Bienvenue
+									dans votre espace personnel
+									#{conseillerBean.conseillerSession.prenom} !</h2>
+							</div>
+							<div class="ui-g-3">
+								<h:form>
+									<h:commandButton class="bouttoncreate" value="création client"
+										action="#{conseillerBean.showCreationClient}" />
+								</h:form>
+							</div>
+						</div>
+
+					<p:panelGrid class="placementListeCLient">
+						<f:facet name="header">
+							<p:row>
+								<p:column colspan="7">Liste de vos Clients</p:column>
+							</p:row>
+						</f:facet>
+
+						<p:row>
+							<p:column>idClient</p:column>
+							<p:column>Nom</p:column>
+							<p:column>Prenom</p:column>
+							<p:column>email</p:column>
+
+							<p:column colspan="3">
+							</p:column>
+						</p:row>
+
+
+
+						<ui:repeat var="jsfUser"
+							value="#{conseillerBean.conseillerSession.listU}"
+							varStatus="status">
+							<p:column colspan="7" styleClass="ui-widget-header">
+
+							</p:column>
+
+							<p:row>
+								<p:column>#{jsfUser.idUser}</p:column>
+								<p:column>#{jsfUser.nom}</p:column>
+								<p:column>#{jsfUser.prenom}</p:column>
+								<p:column>#{jsfUser.email}</p:column>
+								<p:column>
+									<h:form>
+										<h:commandButton class="bouttonget"
+											value="Afficher infos client"
+											action="#{userBean.getUser(jsfUser)}" />
+									</h:form>
+								</p:column>
+								<p:column>
+									<h:form>
+										<h:commandButton class="bouttonupdate"
+											value="Modifier infos client"
+											action="#" />
+									</h:form>
+								</p:column>
+								<p:column>
+									<h:form>
+										<h:commandButton class="bouttondelete"
+											value="Supprimer client"
+											action="#" />
+									</h:form>
+								</p:column>
+							</p:row>
+						</ui:repeat>
+
+
+						<f:facet name="footer">
+							<p:row>
+								<p:column colspan="7" style="text-align: center"> -- fin de la liste --
+           						</p:column>
+							</p:row>
+						</f:facet>
+					</p:panelGrid>
+
+
+				</div>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+</h:body>
+</html>
+

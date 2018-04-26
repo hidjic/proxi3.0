@@ -1,0 +1,63 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+
+	<div class="header">
+		<h:outputText value="ProxiBanque"></h:outputText>
+	</div>
+
+
+	<div class="container">
+		<h:form class="placementFormulaire">
+
+			<h:panelGrid id="panel" columns="1" cellpadding="0" cellspacing="2">
+
+				<h:outputText style="font-size: 1.2em; padding-bot:2em"
+					value="Veuillez entrer votre login et password"></h:outputText>
+				<p:spacer />
+
+				<h:outputLabel for="login" value="login" id="ligin">
+				</h:outputLabel>
+				<p:inputText value="#{conseillerBean.conseillerSession.login}"
+					id="login" required="true"></p:inputText>
+				<h:message requiredMessage="Veuillez rentrer votre login "
+					for="login"></h:message>
+				<p:spacer />
+
+				<h:outputLabel for="pwd" value="Password : " />
+				<p:password id="pwd1"
+					value="#{conseillerBean.conseillerSession.pwd}" required="true" />
+				<p:spacer />
+
+				<p:commandButton value="S'identifier"
+					action="#{conseillerBean.authentification}" icon="ui-icon-check" />
+				<p:spacer />
+
+			</h:panelGrid>
+			<h:panelGroup>
+				<h:message requiredMessage="Veuillez rentrer votre login "
+					for="login"></h:message>
+				<p:spacer />
+				<h:message requiredMessage="Veuillez rentrer votre password "
+					for="pwd"></h:message>
+			</h:panelGroup>
+		</h:form>
+	</div>
+
+	<div class="footer">
+		<p>Designed and developped by Stephane and Mehdi</p>
+	</div>
+
+</h:body>
+</html>

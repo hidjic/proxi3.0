@@ -1,0 +1,60 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<f:view>
+		<ui:composition template="templates/common.xhtml">
+			<ui:define name="content">
+				<div class="container">
+
+
+					<h:form class="formulaireDebit">
+
+						<h:panelGrid id="panel" columns="1" cellpadding="0"
+							cellspacing="2">
+
+							<h:outputText
+								style="font-size: xx-large; font-weight: bold; padding-bot:2em"
+								value="Debiter le compte :"></h:outputText>
+							<p:spacer />
+
+							<p:panelGrid columns="2" layout="grid">
+								<h:outputLabel> Numéro compte :    </h:outputLabel>
+								<h:outputLabel> #{userBean.compteDebit.numCompte}   </h:outputLabel>
+								<h:outputLabel> Solde actuel :   </h:outputLabel>
+								<h:outputLabel>  #{userBean.compteDebit.solde}   </h:outputLabel>
+
+							</p:panelGrid>
+
+							<p:spacer />
+							<h:outputLabel for="montant" value="Montant à débiter : " />
+							<h:form>
+								<p:inputText value="#{userBean.montant}"  id="input1">
+								</p:inputText>
+
+								<p:spacer />
+
+								<p:commandButton class="bouttonValider"
+									value="Effectuer l'opération" action="#{userBean.debitCompte}"
+									icon="ui-icon-check" />
+							</h:form>
+							<p:spacer />
+
+						</h:panelGrid>
+					</h:form>
+
+
+				</div>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+</h:body>
+</html>
+
